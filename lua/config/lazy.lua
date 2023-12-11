@@ -32,6 +32,9 @@ require("lazy").setup({
     -- css
     { import = "lazyvim.plugins.extras.lang.tailwind" },
 
+    -- python
+    { import = "lazyvim.plugins.extras.lang.python" },
+
     -- ui
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
 
