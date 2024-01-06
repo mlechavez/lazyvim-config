@@ -1,9 +1,10 @@
 return {
   {
     "github/copilot.vim",
-    event = "InsertEnter",
     config = function()
-      vim.cmd("source ~/.config/nvim/extra_conf.vim")
+      -- vim.g.copilot_filetypes = { xml = false }
+      -- or
+      -- vim.g.copilot_filetypes = { ["*"] = false, python = true }
     end,
   },
 }
