@@ -2,3 +2,4 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.keymap.set("i", "jk", "<esc>", { silent = true })
+vim.g.python3_host_prog = "/usr/bin/python3"
