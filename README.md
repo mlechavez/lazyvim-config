@@ -8,7 +8,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ## Installation
 
 **linux**
-git clone https://github.com/mlechavez/lazyvim-config ~/.config/nvim
+git clone https://github.com/mlechavez/lazyvim-config.git ~/.config/nvim
 
-windows
-git clone https://github.com/mlechvez/lazyvim-config $env:LOCALAPPDATA/nvim
+**windows**
+git clone https://github.com/mlechvez/lazyvim-config.git $env:LOCALAPPDATA/nvim
