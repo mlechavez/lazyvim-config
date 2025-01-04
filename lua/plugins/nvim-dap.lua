@@ -1,9 +1,11 @@
+if true then
+  return {}
+end
+
 return {
   "mfussenegger/nvim-dap",
   opts = function()
     local dap = require("dap")
-    local json = require("plenary.json") -- Ensure you have `cjson` installed or use an equivalent JSON parser
-    -- local notify = require("notify")
 
     -- Function to read the port from launchSettings.json
     local function get_launchsettings_port()
@@ -52,8 +54,8 @@ return {
       end
     end
     -- Ensure netcoredbg adapter is set up
-    if not dap.adapters["netcoredbg"] then
-      dap.adapters["netcoredbg"] = {
+    if not dap.adapters["coreclr"] then
+      dap.adapters["coreclr"] = {
         type = "executable",
         command = vim.fn.exepath("netcoredbg"),
         args = { "--interpreter=vscode" },
@@ -64,7 +66,7 @@ return {
     end
 
     -- Configure DAP for supported languages
-    for _, lang in ipairs({ "cs", "fsharp", "vb" }) do
+    for _, lang in ipairs({ "cs" }) do
       if not dap.configurations[lang] then
         dap.configurations[lang] = {
           {
@@ -87,7 +89,7 @@ return {
 
               return port or 5000 -- Default to 5000 if no port is found
             end,
-            preLaunchTask = rebuild_project,
+            -- preLaunchTask = rebuild_project,
           },
         }
       end
