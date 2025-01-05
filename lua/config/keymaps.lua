@@ -2,7 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Go to normal mode" })
-vim.keymap.set("n", "<leader>t", ":ToggleTerm direction=float<CR>", { desc = "Opens the terminal", noremap = true })
 
 local dap = require("dap")
 vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/Continue Debugging" })
