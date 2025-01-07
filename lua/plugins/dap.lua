@@ -18,7 +18,7 @@ return {
 
     vim.g.dotnet_get_dll_path = function()
       local request = function()
-        return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/net8.0/", "file")
+        return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
       end
 
       if vim.g["dotnet_last_dll_path"] == nil then
@@ -67,7 +67,7 @@ return {
             pickers
               .new(opts, {
                 prompt_title = "Path to executable",
-                finder = finders.new_oneshot_job({ "fd", "--hidden", "--no-ignore", "--type", "x" }, {}),
+                finder = finders.new_oneshot_job({ "fd", "--hidden", "--no-ignore", "--type", "f", "-e", "dll" }, {}),
                 sorter = conf.generic_sorter(opts),
                 attach_mappings = function(buffer_number)
                   actions.select_default:replace(function()
@@ -82,7 +82,6 @@ return {
         end,
       },
     }
-
     dap.configurations.cs = config
   end,
 }
