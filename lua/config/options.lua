@@ -6,3 +6,5 @@
 if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
   vim.o.shellslash = false
 end
+
+vim.g.lazyvim_prettier_needs_config = false
